@@ -3,13 +3,23 @@ footer {
     color: white;
     background-color: black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center ;
 }
 
 .footer_column {
     padding: 20px;
-    width: 40%;
+    width: 100%;
     text-align: center;
+}
+
+
+@media screen and (min-width: 700px) {
+    footer {
+        flex-direction: row;
+    }
+    .footer_column {
+        width: 50%
+    }
 }

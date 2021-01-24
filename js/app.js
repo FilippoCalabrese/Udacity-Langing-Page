@@ -6,10 +6,10 @@ const headerNavList = document.querySelector('#main_menu');
 sections.forEach(function(element){
     const anchor = document.createElement('a');
     anchor.innerHTML = element.getAttribute('data-name');
-    anchor.setAttribute('href', '#'+element.getAttribute('id'));
 
     //this will be used later to find the active section
     anchor.setAttribute('data-section-id', element.getAttribute('id'));
+    anchor.setAttribute('class', 'nav-link');
 
     const listItem = document.createElement('li');
     listItem.appendChild(anchor);
@@ -43,4 +43,17 @@ function navMarcClosestSection() {
         document.querySelector("a[data-section-id*=" + sectionId + "]").classList.remove("active");
     }
   });
+}
+
+//this section handles the scrolling event on menu item click
+
+function scrollToSection(){
+  const targetSectionId = this.getAttribute('data-section-id');
+  const targetSection = document.getElementById(targetSectionId);
+  targetSection.scrollIntoView();
+}
+const navItems = document.getElementsByClassName('nav-link');
+for(const element of navItems) {
+  console.log(element);
+  element.addEventListener('click', scrollToSection);
 }
