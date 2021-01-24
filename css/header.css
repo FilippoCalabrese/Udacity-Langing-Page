@@ -1,0 +1,28 @@
+#main_menu a.active {
+    color: red;
+}
+
+header {
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+#main_menu {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#main_menu a {
+    font-weight: bold;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    color: #333333;
+}
+
